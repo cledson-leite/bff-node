@@ -1,0 +1,22 @@
+{
+  "name": "bff-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "json-server:posts": "json-server --watch ./external_apis/posts.json --port 3001 --middlewares ./external_apis/random-delay.js",
+    "json-server:comments": "json-server --watch ./external_apis/comments.json --port 3002 --middlewares ./external_apis/random-delay.js",
+    "json-server:users": "json-server --watch ./external_apis/users.json --port 3003 --middlewares ./external_apis/random-delay.js",
+    "dev": "npm run start --watch & npm run json-server:posts & npm run json-server:comments & npm run json-server:users"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^4.28.1",
+    "ioredis": "^5.4.1",
+    "opossum": "^8.1.4",
+    "undici": "^6.19.2"
+  }
+}
